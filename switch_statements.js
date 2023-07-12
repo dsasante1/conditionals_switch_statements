@@ -12,9 +12,9 @@
 // Implement the subscription plan calculator by taking inputs for the
 // selected plan and the options, and outputting the final monthly subscription cost based on the rules above.
 
-let basic = 'basic'
-let standard = 'standard'
-let premium = 'premium'
+let basic = 'basic '
+let standard = 'standard ' 
+let premium = 'premium '
 let total = 0
 
 
@@ -25,9 +25,9 @@ let premiumCost = 20
 
 
 // additional options
-let personalTrainer = 'personal trainer'
-let mealPlan = 'meal'
-let mealAndTrainer = 'personal trainer and meal'
+let personalTrainer = 'personal trainer '
+let mealPlan = 'meal '
+let mealAndTrainer = 'personal trainer and meal '
 
 
 
@@ -40,23 +40,22 @@ let mealPlanCost = 8
 let discount = 0.03
 
 
-let userSelection = ''
-
+let userSelection = '6'
 
 
 switch (true){
 
-    case(userSelection !== '' && typeof userSelection === 'string'):
+    case(typeof userSelection === 'string' && userSelection !== ''):
 
-        case (userSelection.includes('basic')):
+        if (userSelection.includes('basic') && userSelection.indexOf('basic') != -1){
             console.log('basic plan +')
             total += basicCost
 
-            if(userSelection.includes('personal trainer') && userSelection.includes('meal plan')){
-                console.log(`meal plan and personal trainer +`)
+            if(userSelection.includes('personal trainer') && userSelection.includes('meal')){
+                console.log(`meal plan and personal trainer + (discount applies)`)
                 total += mealPlanCost + personalTrainerCost
                 total *= discount
-            }else if(userSelection.includes('meal plan')){
+            }else if(userSelection.includes('meal')){
                 console.log(`meal plan +`)
                 total += mealPlanCost
             }else if(userSelection.includes('personal trainer')){
@@ -66,17 +65,16 @@ switch (true){
             }
 
             console.log(`total cost of subscribtion = ${total}`)
-            break;
-
-        case (userSelection.includes('standard')):
+  
+        }else if (userSelection.includes('standard') && userSelection.indexOf('standard') != -1){
             console.log('standard +')
             total += standardCost
 
-            if(userSelection.includes('personal trainer') && userSelection.includes('meal plan')){
-                console.log(`meal plan and personal trainer +`)
+            if(userSelection.includes('personal trainer') && userSelection.includes('meal')){
+                console.log(`meal plan and personal trainer + (discount applies)`)
                 total += mealPlanCost + personalTrainerCost
                 total *= discount
-            }else if(userSelection.includes('meal plan')){
+            }else if(userSelection.includes('meal')){
                 console.log(`meal plan +`)
                 total += mealPlanCost
             }else if(userSelection.includes('personal trainer')){
@@ -86,18 +84,17 @@ switch (true){
  
 
             console.log(`total cost of subscribtion = ${total}`)
-            break;
-
-        case (userSelection.includes('premium')):
+  
+        }else if (userSelection.includes('premium') && userSelection.indexOf('premium') != -1){
             console.log('premium +')
             total += premiumCost
             
-            if(userSelection.includes('personal trainer') && userSelection.includes('meal plan')){
-                console.log(`meal plan and personal trainer +`)
+            if(userSelection.includes('personal trainer') && userSelection.includes('meal')){
+                console.log(`meal plan and personal trainer + (discount applies)`)
                 total += mealPlanCost + personalTrainerCost
                 total *= discount
 
-            }else if(userSelection.includes('meal plan')){
+            }else if(userSelection.includes('meal')){
                 console.log(`meal plan +`)
                 total += mealPlanCost
             }else if(userSelection.includes('personal trainer')){
@@ -106,7 +103,11 @@ switch (true){
             }
     
             console.log(`total cost of subscribtion = ${total}`)
-            break;
+  
+        }else{
+            console.log('enter a valid plan!')
+        }
+        break
     default:
         console.log('select a plan! enter valid inputs')
         break;
