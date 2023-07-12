@@ -40,7 +40,7 @@ let mealPlanCost = 8
 let discount = 0.03
 
 
-let userSelection = '6'
+let userSelection = basic + personalTrainer
 
 
 switch (true){
