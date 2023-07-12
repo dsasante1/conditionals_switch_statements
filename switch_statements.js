@@ -15,7 +15,7 @@
 let basic = 'basic'
 let standard = 'standard'
 let premium = 'premium'
-
+let total = 0
 
 
 let basicCost = 10
@@ -26,8 +26,8 @@ let premiumCost = 20
 
 // additional options
 let personalTrainer = 'personal trainer'
-let mealPlan = 'meal plan'
-let doubleOptionSelected = 'both additional options'
+let mealPlan = 'meal'
+let mealAndTrainer = 'personal trainer and meal'
 
 
 
@@ -40,50 +40,76 @@ let mealPlanCost = 8
 let discount = 0.03
 
 
-let userSelection = 'personalTrainer basic'
+let userSelection = ''
 
 
-switch (userSelection){
-    case(!userSelection && typeof userSelection === String):
+
+switch (true){
+
+    case(userSelection !== '' && typeof userSelection === 'string'):
 
         case (userSelection.includes('basic')):
-        console.log('basic')
-        total += basicCost
-        if (personalTrainer){
-            let cost = 5
-            console.log(cost)
-        }
-        else if(mealPlan){
-            let cost = 8
-            console.log(cost)
-        }else if (mealPlan && personalTrainer){
-             let cost =  5 + 8 + 3
-            console.log(cost)
-        }
+            console.log('basic plan +')
+            total += basicCost
 
+            if(userSelection.includes('personal trainer') && userSelection.includes('meal plan')){
+                console.log(`meal plan and personal trainer +`)
+                total += mealPlanCost + personalTrainerCost
+                total *= discount
+            }else if(userSelection.includes('meal plan')){
+                console.log(`meal plan +`)
+                total += mealPlanCost
+            }else if(userSelection.includes('personal trainer')){
+                console.log(`personal trainer +`)
+                total += personalTrainerCost
+
+            }
+
+            console.log(`total cost of subscribtion = ${total}`)
             break;
 
-        case 'standard':
-            console.log('standard')
+        case (userSelection.includes('standard')):
+            console.log('standard +')
             total += standardCost
+
+            if(userSelection.includes('personal trainer') && userSelection.includes('meal plan')){
+                console.log(`meal plan and personal trainer +`)
+                total += mealPlanCost + personalTrainerCost
+                total *= discount
+            }else if(userSelection.includes('meal plan')){
+                console.log(`meal plan +`)
+                total += mealPlanCost
+            }else if(userSelection.includes('personal trainer')){
+                console.log(`personal trainer +`)
+                total += personalTrainerCost
+            }
+ 
+
+            console.log(`total cost of subscribtion = ${total}`)
             break;
-        
-        case 'premium':
-            console.log('premium')
+
+        case (userSelection.includes('premium')):
+            console.log('premium +')
             total += premiumCost
+            
+            if(userSelection.includes('personal trainer') && userSelection.includes('meal plan')){
+                console.log(`meal plan and personal trainer +`)
+                total += mealPlanCost + personalTrainerCost
+                total *= discount
+
+            }else if(userSelection.includes('meal plan')){
+                console.log(`meal plan +`)
+                total += mealPlanCost
+            }else if(userSelection.includes('personal trainer')){
+                console.log(`personal trainer +`)
+                total += personalTrainerCost
+            }
+    
+            console.log(`total cost of subscribtion = ${total}`)
             break;
-        
     default:
-        console.log('enter a valid input')
+        console.log('select a plan! enter valid inputs')
         break;
 
-    
-    
 }
 
-
-// use string 
-
-// string method includes  
-
-// basic plan personal trainer
