@@ -28,38 +28,43 @@
 
 let finalTicketPrice = 0
 
-let movieType
-let age
-let seatSelection
+let movieType = 'imax'
+let age = 45
+let selectVIPSeat = false
 
 
 
 
-if regulat movies{
-    if age < 12 {
-        ticket = 8
-    }else if age >= 12 && age < 65{
-        ticket = 12
-    }else if age >= 65{
-        ticket = 10
+if (movieType === 'regular'){
+    if (age < 12) {
+        finalTicketPrice += 8
+    }else if (age >= 12 && age < 65){
+        finalTicketPrice += 12
+    }else if (age >= 65){
+        finalTicketPrice += 10
     }
 
-}else if 3d movies{
-    if age < 12 {
-        ticket = 10
-    }else if age >= 12 && age < 65{
-        ticket = 15
-    }else if age >= 65{
-        ticket = 12
+}else if (movieType === '3d'){
+    if (age < 12) {
+        finalTicketPrice += 10
+    }else if (age >= 12 && age < 65){
+        finalTicketPrice += 15
+    }else if (age >= 65){
+        finalTicketPrice += 12
     }
 
-}else if imax movies{
-    if age < 12{
-        ticket 12
-    }else if age >= 12 && age < 65{
-        ticket = 18
-    }else if age >= 65{
-        ticket = 15
+}else if (movieType === 'imax'){
+    if (age < 12){
+        finalTicketPrice += 12
+    }else if (age >= 12 && age < 65){
+        finalTicketPrice += 18
+    }else if (age >= 65){
+        finalTicketPrice += 15
     }
 }
 
+if(selectVIPSeat){
+    finalTicketPrice += 5
+}
+
+console.log(`final ticket price = ${finalTicketPrice} dollars`)

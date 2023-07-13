@@ -114,3 +114,86 @@ switch (true){
 
 }
 
+
+
+
+
+
+
+// let userSelection = basic
+// let selectedAdditionalPlan = personalTrainer
+
+
+
+
+// switch (true){
+
+//     case(typeof userSelection === 'string' && userSelection !== ''):
+
+//         if (userSelection === basic){
+//             console.log('basic plan +')
+//             total += basicCost
+
+//             if(selectedAdditionalPlan === personalTrainer){
+//                 console.log(`meal plan and personal trainer + (discount applies)`)
+//                 total += mealPlanCost + personalTrainerCost
+//                 total *= discount
+//             }else if(selectedAdditionalPlan === mealPlan){
+//                 console.log(`meal plan +`)
+//                 total += mealPlanCost
+//             }else if(selectedAdditionalPlan === Plan){
+//                 console.log(`personal trainer +`)
+//                 total += personalTrainerCost
+
+//             }
+
+//             console.log(`total cost of subscribtion = ${total}`)
+  
+//         }else if (userSelection.includes('standard') && userSelection.indexOf('standard') != -1){
+//             console.log('standard +')
+//             total += standardCost
+
+//             if(userSelection.includes('personal trainer') && userSelection.includes('meal')){
+//                 console.log(`meal plan and personal trainer + (discount applies)`)
+//                 total += mealPlanCost + personalTrainerCost
+//                 total *= discount
+//             }else if(userSelection.includes('meal')){
+//                 console.log(`meal plan +`)
+//                 total += mealPlanCost
+//             }else if(userSelection.includes('personal trainer')){
+//                 console.log(`personal trainer +`)
+//                 total += personalTrainerCost
+//             }
+ 
+
+//             console.log(`total cost of subscribtion = ${total}`)
+  
+//         }else if (userSelection.includes('premium') && userSelection.indexOf('premium') != -1){
+//             console.log('premium +')
+//             total += premiumCost
+            
+//             if(userSelection.includes('personal trainer') && userSelection.includes('meal')){
+//                 console.log(`meal plan and personal trainer + (discount applies)`)
+//                 total += mealPlanCost + personalTrainerCost
+//                 total *= discount
+
+//             }else if(userSelection.includes('meal')){
+//                 console.log(`meal plan +`)
+//                 total += mealPlanCost
+//             }else if(userSelection.includes('personal trainer')){
+//                 console.log(`personal trainer +`)
+//                 total += personalTrainerCost
+//             }
+    
+//             console.log(`total cost of subscribtion = ${total}`)
+  
+//         }else{
+//             console.log('enter a valid plan!')
+//         }
+//         break
+//     default:
+//         console.log('select a plan! enter valid inputs')
+//         break;
+
+// }
+
